@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>HappyBirthday</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="envelope-wrapper">
+            <div class="envelope">
+                <div class="heart"></div>
+                <div class="front"></div>
+                <div class="card">
+                    <div class="text">
+                        <strong>Hi Love,</strong>
+                        <p>Happy happy birthday! Unang una sa lahat, sobrang miss na kita and first time na malayo ka to
+                            celebrate your birthday lalo na ngayong offical na mayroong tayo talaga. Pero kahit ganun, I
+                            hope na ngayong birthday mo, walaman kami physically, pero yung love namin kaming tunay na
+                            nagmamahal saiyo ay mafeel mo and nanatili parin. I know na most of your days hindi nagiging
+                            madali saiyo lalo na pagkahomesick rin rito, yung pagod mo sa work and all, but I pray na
+                            lahat ng iyon maging worth it. Hindi man nakikita ng iba, pero kita ni Lord lahat ng
+                            sacrifices mo, yung iyak mo, and by His time, magbubunga lahat ng iyon. One thing that I can
+                            promise to you is that I will stay. Gaano man kalayo, minamalditahan man kita minsan haha
+                            pero I will always choose to stay. Iniwan kaman ng iba, pero never kitang iiwan I promise
+                            love and ikaw ang gusto ko makasama hanggang pagtanda. And please, magiingat ka lagi alagaan
+                            mo sarili mo diyan, soon magkikita rin tayo and magkakasama without any hindrance and
+                            without any distance.. I love you love, my bapsi, bhe, bhebhekoww!💗</p>
+                        <div class="card-images">
+                            <img class="img1" src="img1.jpg">
+                            <img class="img2" src="img2.jpg">
+                            <img class="img3" src="img3.jpg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hearts">
+            <div class="one"></div>
+            <div class="two"></div>
+            <div class="three"></div>
+            <div class="four"></div>
+            <div class="five"></div>
+        </div>
+    </div>
+    <div class="shadow"></div>
+</body>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        const cuteHeartCount = 30;
+        const body = document.body;
+        for (let i = 0; i < cuteHeartCount; i++) {
+            const cuteHeart = document.createElement('div');
+            cuteHeart.classList.add('cuteHeart');
+
+            cuteHeart.style.left = Math.random() * 100 + 'vw';
+
+            cuteHeart.style.animationDuration = (12 + Math.random() * 13) + 's';
+
+            cuteHeart.style.animationDelay = (Math.random() * 20) + 's';
+
+            const scale = 0.7 + Math.random() * 0.4;
+            cuteHeart.style.transform = `scale(${scale})`;
+            body.appendChild(cuteHeart);
+        }
+    });
+
+
+</script>
+<style>
+    body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #fae1dd;
+    overflow: hidden;
+}
+
+.container {
+    position: relative;
+}
+
+.envelope-wrapper {
+    position: relative;
+    top: 50px;
+    cursor: pointer;
+    animation: up 3s linear infinite;
+}
+
+@keyframes up {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-30px);
+    }
+}
+
+.envelope {
+    position: relative;
+    width: 300px;
+    height: 170px;
+    background-color: #f08080;
+    z-index: 15;
+    cursor: pointer;
+}
+
+.envelope::before {
+    background-color: #f08080;
+    content: "";
+    position: absolute;
+    z-index: -2;
+    width: 212px;
+    height: 212px;
+    transform: rotate(45deg);
+    top: -105px;
+    left: 44px;
+    border-radius: 30px 0 0 0;
+}
+
+.card {
+    position: absolute;
+    background-color: #eae2b7;
+    width: 270px;
+    height: 190px;
+    top: 5px;
+    left: 15px;
+    box-shadow: -5px -5px 100px rgba(0, 0, 0, 0.4);
+    z-index: 5;
+    transition: 0.2s;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 15px;
+    box-sizing: border-box;
+    overflow: hidden;
+    font-family: 'Arial', sans-serif;
+}
+
+.envelope:hover .card {
+    transform: translateY(-100px);
+    z-index: 100;
+    cursor: pointer;
+    width: 500px;          
+    height: 450px;     
+    position: fixed;
+    top: -100px;
+    left: -200px;
+    padding: 20px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+    border-radius: 10px;
+}
+
+.text strong {
+    position: relative;
+    font-family: 'Brush Script MT', cursive;
+    font-size: 28px;
+    left: 10px;
+    color: #003049;
+}
+
+.text p {
+    font-size: 14px; 
+    text-align: center; 
+    margin: 0; 
+    line-height: 1.4; 
+}
+
+.card-images {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+}
+
+.card-images img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.card-images img:hover {
+    transform: scale(1.1);
+}
+
+.heart {
+    background-color: #d62828;
+    display: inline-block;
+    height: 30px;
+    margin: 0 10px;
+    position: relative;
+    top: 75px;
+    left: 120px;
+    transform: rotate(45deg);
+    width: 30px;
+    z-index: 11;
+}
+
+.heart::before,
+.heart::after {
+    content: "";
+    background-color: #d62828;
+    border-radius: 50%;
+    height: 30px;
+    position: absolute;
+    width: 30px;
+}
+
+.heart::before {
+    top: -15px;
+    left: 0;
+}
+
+.heart::after {
+    top: 0;
+    left: -15px;
+}
+
+.hearts {
+    position: absolute;
+    top: 10px;
+}
+
+@keyframes heart {
+    0% {
+        transform: translateY(0) rotate(-45deg) scale(0.3);
+    }
+
+    100% {
+        transform: translateY(-150px) rotate(-45deg) scale(1.3);
+        opacity: 0.5;
+    }
+}
+
+.one,
+.two,
+.three,
+.four,
+.five {
+    background-color: red;
+    display: inline-block;
+    height: 10px;
+    width: 10px;
+    margin: 0 10px;
+    position: relative;
+    transform: rotate(-45deg);
+    top: 50px;
+}
+
+.one::before,
+.one::after,
+.two::before,
+.two::after,
+.three::before,
+.three::after,
+.four::before,
+.four::after,
+.five::before,
+.five::after {
+    content: "";
+    background-color: red;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+}
+
+.one::before,
+.two::before,
+.three::before,
+.four::before,
+.five::before {
+    top: -5px;
+    left: 0;
+}
+
+.one::after,
+.two::after,
+.three::after,
+.four::after,
+.five::after {
+    top: 0;
+    left: 5px;
+}
+
+.one {
+    left: 10px;
+    animation: heart 1s ease-out infinite;
+}
+
+.two {
+    left: 30px;
+    animation: heart 2s ease-out infinite;
+}
+
+.three {
+    left: 50px;
+    animation: heart 1.5s ease-out infinite;
+}
+
+.four {
+    left: 70px;
+    animation: heart 2.3s ease-out infinite;
+}
+
+.five {
+    left: 90px;
+    animation: heart 1.7s ease-out infinite;
+}
+
+.front {
+    position: absolute;
+    border-right: 180px solid #f4978e;
+    border-top: 95px solid transparent;
+    border-bottom: 100px solid transparent;
+    left: 120px;
+    top: 5px;
+    width: 0;
+    height: 0;
+    z-index: 10;
+}
+
+.front::before {
+    position: absolute;
+    content: "";
+    border-left: 300px solid #f8ad9d;
+    border-top: 195px solid transparent;
+    left: -120px;
+    top: -95px;
+    width: 0;
+    height: 0;
+}
+
+.shadow {
+    position: absolute;
+    width: 330px;
+    height: 25px;
+    border-radius: 50%;
+    border-color: rgba(0, 0, 0, 0.03);
+    top: 265px;
+    left: -15px;
+    z-index: -1;
+    animation: scale 3s linear infinite;
+}
+
+@keyframes scale {
+
+    0%,
+    100% {
+        transform: scaleX(1);
+    }
+
+    50% {
+        transform: scaleX(0.85);
+    }
+}
+
+.cuteHeart {
+    position: absolute;
+    bottom: 20px;
+    width: 20px;
+    height: 18px;
+    background: #ff4d94;
+    filter: drop-shadow(0 1px 1px rgba(255, 77, 148, 0.5));
+    cursor: default;
+    animation-name: rise;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    border-radius: 10px 10px 0 0;
+    transform-origin: center bottom;
+    box-shadow:
+        0 0 6px #ff4d94,
+        0 0 10px #ff1a75,
+        0 0 12px #ff1a75;
+    opacity: 0;
+    z-index: -1;
+}
+
+.cuteHeart::before,
+.cuteHeart::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 18px;
+    background: #ff4d94;
+    border-radius: 10px 10px 0 0;
+}
+
+.cuteHeart::before {
+    top: -10px;
+    left: 0;
+}
+
+.cuteHeart::after {
+    left: 10px;
+    top: 0;
+}
+
+@keyframes rise {
+    0% {
+        transform: translateY(0) scale(0.8);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-110vh) scale(1);
+        opacity: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .envelope {
+        width: 200px;
+        height: 120px;
+    }
+    .card {
+        width: 180px;
+        height: 130px;
+        padding: 10px;
+        overflow-y: auto;
+    }
+    .envelope:hover .card {
+        width: 320px;
+        height: 450px;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .text strong {
+        font-size: 20px;
+    }
+
+    .text p {
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
+
+    .card-images img {
+        width: 40px;
+        height: 40px;
+    }
+}
+</style>
+</html>
